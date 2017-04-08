@@ -4,15 +4,12 @@
         </div>
         <center>
 <form class="form-horizontal col-lg-4" name="signinForm" role="form">
-    <div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
+    
       <label>Email</label>
           <input type="email" name="email" class="form-control" ng-model="log.email">
-      <p class="help-block" ng-show="signinForm.email.$invalid">Email invalido</p>
     </div>
-    <div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
         <label>Password</label>
         <input type="password" name="password" class="form-control" ng-model="log.password" ng-minlength="3">
-        <p class="help-block" ng-show="signinForm.password.$error.minlength">Minimo 8 caracteres</p>
     </div>
     <label class="checkbox">
         <a href="#!/reg"> Sign Up</a>

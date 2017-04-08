@@ -20,6 +20,11 @@ app.config(function($routeProvider){
     templateUrl: 'views/login.html'
 
   })
+  .when('/chat', {
+    controller: 'chatController',
+    templateUrl: 'views/chat.html'
+
+  })
   .otherwise({
     redirectTo: '/'
   });
