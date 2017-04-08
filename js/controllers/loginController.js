@@ -9,7 +9,7 @@ app.controller('loginController', ['$scope', '$firebaseAuth', '$location','FBURL
     messagingSenderId: "835221380500"
   };
   firebase.initializeApp(config);
-  	$scope.mensaje;
+  	$scope.mensaje = "conectado?";
 	$scope.signIn = function(){
 		var email = $scope.log.email;
 		var password = $scope.log.password;
