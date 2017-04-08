@@ -1,6 +1,9 @@
-    <div class="jumbotron" style="padding-bottom:0px;">
+ 
+           <div class="jumbotron" style="padding-bottom:0px;">
             <center><h2>Registrar</h2></center>
         </div>
+        <center>
+<form class="form-horizontal col-lg-4" name="signinForm" role="form" >
     <div class="form-group" ng-class="{ 'has-error' : signupForm.email.$invalid }">
         <label>Email</label>
         <input type="email" name="email" class="form-control" ng-model="reg.email">
@@ -16,3 +19,5 @@
     </label>
     <button ng-disabled="!reg.email || !reg.password" type="button" ng-click="signUp()" class="btn btn-lg btn-primary btn-block">SignUp</button>
 </form>
+</center>
+

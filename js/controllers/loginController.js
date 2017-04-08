@@ -17,12 +17,13 @@ app.controller('loginController', ['$scope', '$firebaseAuth', '$location','FBURL
 		if(email && password){
 			
 			firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-				$location.path('/');
+				console.log("pass");
+				$location.path('/consulta');
 			}).catch(function(error){
 				var errorCode = error.code;
   				var errorMessage = error.message;
 			});
 		}
-	}
+	};
 
-}])
+}]);

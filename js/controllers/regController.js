@@ -23,6 +23,6 @@ app.controller('regController', ['$scope', '$firebaseAuth', '$location','FBURL',
   				var errorMessage = error.message;
 			});
 		}
-	}
+	};
 
-}])
+}]);
