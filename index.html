@@ -19,21 +19,31 @@
       <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
 
       <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+	</head>
 
-
- <body ng-app="myApp">
+<body ng-app="myApp">
 
         <!-- Navbar -->
        
 
         <!-- Container -->
         <div class="container starter-template">
-        <h1>Tarea Chat</h1>
-      <div ng-view></div>
 
-        </div>
+        
 
-        <!-- Module -->
+</div>
+	<center>
+		<form class="form-horizontal" >
+	  		<legend>
+	  			Tarea Chat
+	  		</legend>
+	  		<div class="form-group">
+		  <a href="#/views/login.html" class="btn btn-success" >Iniciar Sesion</a>
+		  <a href="/views/reg.html" class="btn btn-warning">Registrase</a>
+			</div>
+		</form>
+		</center>
+<!-- Module -->
         <script src="js/app.js"></script>
 
         <!-- Controllers -->
