@@ -1,58 +1,46 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/journal/bootstrap.min.css">
+  <head>
+      <meta charset="utf-8">
+      <title>Tarea Chat</title>
 
-<link rel="stylesheet" href="css/style.css">
-<!--Angulare -->
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-</head>
+  <!-- AngularJS and ng-Route -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.3/angular-route.min.js"></script>
+
+      <!-- Firebase -->
+      <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+  <!-- AngularFire -->
+      <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
 
 
-<body ng-app="chat-firebase" ng-controller="chatCtrl">
- 
-    <!-- Caja para contener tu 'nickname' para el chat -->
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <label for="nickname">Introduce tu Nickname</label>
-        <input type="text" ng-model="nickname" id="nickname" placeholder="Anonimo" />
-      </div>
-    </div>
-    
-    <!-- Contenedor de los chats -->
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <label for="chats-box">Veamos que hay de Nuevo...</label>
-        <div id="chats-box" disabled="" ng-model="chats">
-          <div ng-repeat="chat in chats" id="chat">
-            <h3>{{chat.sender}} <small>escribio {{getTiempo(chat.time)}}:</small></h3>
-            <div>{{chat.text}}</div>
-          </div>
+ <body ng-app="myApp">
+
+        <!-- Navbar -->
+       
+
+        <!-- Container -->
+        <div class="container starter-template">
+        <h1>Tarea Chat</h1>
+      <div ng-view></div>
+
         </div>
-      </div>
-    </div>
-    
-    <!-- Caja de texto para escribir lo que desees y el boton para enviarlo al chat! -->
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4 text-center">
-        <div class="row">
-          <div class="col-md-9">
-            <textarea id="chat-send" ng-model="chatSend"></textarea>
-          </div>
-          <div class="col-md-3">
-            <input type="button" ng-click="send()" class="btn btn-success" id="send-button" value="Enviar!" />
-          </div>
-        </div>
-      </div>
-    </div>
 
- <script data-require="angular.js@*" data-semver="1.3.4" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-    <script data-require="firebase@*" data-semver="1.0.18" src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
-    <script data-require="moment.js@*" data-semver="2.8.3" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.js"></script>
-    <script src="js/script.js"></script>
+        <!-- Module -->
+        <script src="js/app.js"></script>
 
-</body>
+        <!-- Controllers -->
+        <script src="js/controllers/ListController.js"></script>    
+        <script src="js/controllers/AddController.js"></script>     
+        <script src="js/controllers/regController.js"></script>  
+        <script src="js/controllers/loginController.js"></script>
+
+    </body>
 </html>
