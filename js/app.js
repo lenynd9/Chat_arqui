@@ -31,6 +31,6 @@ app.config(function($routeProvider){
 });
 
 app.constant('FBURL', 
-  'https://appchat-92897.firebaseio.com/products/' 
+  'https://appchat-92897.firebaseio.com/chats/' 
   //Use the URL of your project here with the trailing slash                                                   
 );

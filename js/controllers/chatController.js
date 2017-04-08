@@ -1,4 +1,4 @@
-app.controller('chatController', ['$scope', '$firebaseAuth', '$location','FBURL', function($scope, $firebaseAuth, $location, FBURL){
+app.controller('chatController', ['$scope', '$firebaseArray', '$location','FBURL', function($scope, $firebaseArray, $location, FBURL){
 	
 	var config = {
     apiKey: "AIzaSyCsakwDqTDU4WKSngcAJIGUgu0BKF9JqdM",
@@ -10,6 +10,39 @@ app.controller('chatController', ['$scope', '$firebaseAuth', '$location','FBURL'
   };
   firebase.initializeApp(config);
 
-	
+	//Creemos nuestro modulo de angular
+    //Conectemos a Firebase
+    var rootRef = firebase.database().ref('chats');
 
-}]);
+    
+    //Para prevenir cualquier excepcion con nuestras variables, lo inicializamos a ""
+    
+    
+    //Para prevenir cualquier excepcion con nuestras variables, lo inicializamos a ""
+    $scope.nickname="";
+    $scope.chats={};
+    
+    //Ahora crearemos la funcion que enviara nuestros chats a Firebase
+    $scope.send = function(){
+      if($scope.nickname === ""){
+        $scope.nickname = "Anonimo";
+      }
+      var time = new Date();
+      rootRef.push({
+        sender : $scope.nickname,
+        text : $scope.chatSend,
+        time : time.toString()
+      });
+    };
+    $scope.getTiempo = function(tiempo){
+      var momentTiempo = moment(tiempo).fromNow();
+      return momentTiempo;
+    };
+    
+    
+    var syncArreglo;
+    var arreglo=rootRef.on('value', function(snapshot) {
+        return $scope.chats= snapshot.val();
+      }); 
+
+  }]);

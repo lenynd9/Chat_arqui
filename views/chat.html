@@ -1,1 +1,34 @@
-<h1>esta logeado</h1>
+ <!-- Caja para contener tu 'nickname' para el chat -->
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <label for="nickname">Introduce tu Nickname</label>
+        <input type="text" ng-model="nickname" id="nickname" placeholder="Anonimo" />
+      </div>
+    </div>
+    
+    <!-- Contenedor de los chats -->
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <label for="chats-box">Veamos que hay de Nuevo...</label>
+        <div id="chats-box" disabled="" ng-model="chats">
+          <div ng-repeat="chat in chats" id="chat">
+            <h3>{{chat.sender}} <small>escribio {{getTiempo(chat.time)}}:</small></h3>
+            <div>{{chat.text}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Caja de texto para escribir lo que desees y el boton para enviarlo al chat! -->
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <div class="row">
+          <div class="col-md-9">
+            <textarea id="chat-send" ng-model="chatSend"></textarea>
+          </div>
+          <div class="col-md-3">
+            <input type="button" ng-click="send()" class="btn btn-success" id="send-button" value="Enviar!" />
+          </div>
+        </div>
+      </div>
+    </div>
