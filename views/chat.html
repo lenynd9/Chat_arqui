@@ -9,7 +9,6 @@
     <!-- Contenedor de los chats -->
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <label for="chats-box">Veamos que hay de Nuevo...</label>
         <div id="chats-box" disabled="" ng-model="chats">
           <div ng-repeat="chat in chats" id="chat">
             <h3>{{chat.sender}} <small>escribio {{getTiempo(chat.time)}}:</small></h3>
