@@ -44,5 +44,25 @@ app.controller('chatController', ['$scope', '$firebaseArray', '$location','FBURL
     var arreglo=rootRef.on('value', function(snapshot) {
         return $scope.chats= snapshot.val();
       }); 
+	
+	
+	const messaging = firebase.messaging();
+	messaging.requestPermission()
+	.then(function(){
+		console.log("tiene permiso");
+		return messaging.getToken();
+	})
+	.then(function(token){
+		console.log(token);
+	})
+		.catch(function(err){
+		console.log("error connect");
+	})
+	
+	
+	
+	setInterval(function(){
+      $scope.$digest();
+    },60000);
 
   }]);
