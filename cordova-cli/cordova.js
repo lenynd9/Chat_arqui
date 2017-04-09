@@ -43,7 +43,7 @@ exports = module.exports = {
 
 exports.findProjectRoot = function(opt_startDir) {
     return cordova_util.isCordova(opt_startDir);
-}
+};
 
 var addModuleProperty = cordova_util.addModuleProperty;
 addModuleProperty(module, 'prepare', './src/prepare', true);

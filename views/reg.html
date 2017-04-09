@@ -1,19 +1,16 @@
- <ion-view title="Sign In">
-    <ion-content>
+
            <div class="jumbotron" style="padding-bottom:0px;">
             <center><h2>Registrar</h2></center>
         </div>
         <center>
 <form class="form-horizontal col-lg-4" name="signinForm" role="form" >
-    <div class="form-group" ng-class="{ 'has-error' : signupForm.email.$invalid }">
+    <div class="form-group" >
         <label>Email</label>
         <input type="email" name="email" class="form-control" ng-model="reg.email">
-        <p class="help-block" ng-show="signupForm.email.$invalid">Email invalido</p>
     </div>
-    <div class="form-group" ng-class="{ 'has-error' : signupForm.password.$invalid }">
+    <div class="form-group" >
         <label>Password</label>
         <input type="password" name="password" class="form-control" ng-model="reg.password" ng-minlength="3">
-        <p class="help-block" ng-show="signupForm.password.$error.minlength">Minimo 8 caracteres.</p>
     </div>
     <label class="checkbox">
         <a href="#!/login"> Sign in</a>
@@ -21,6 +18,3 @@
     <button ng-disabled="!reg.email || !reg.password" type="button" ng-click="signUp()" class="btn btn-lg btn-primary btn-block">SignUp</button>
 </form>
 </center>
-
-</ion-content>
-</ion-view>

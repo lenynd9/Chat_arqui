@@ -1,5 +1,5 @@
 app.controller('chatController', ['$scope', '$firebaseArray', '$location','FBURL', function($scope, $firebaseArray, $location, FBURL){
-	
+/*	
 	var config = {
     apiKey: "AIzaSyCsakwDqTDU4WKSngcAJIGUgu0BKF9JqdM",
     authDomain: "appchat-92897.firebaseapp.com",
@@ -9,7 +9,7 @@ app.controller('chatController', ['$scope', '$firebaseArray', '$location','FBURL
     messagingSenderId: "835221380500"
   };
   firebase.initializeApp(config);
-
+*/
 	//Creemos nuestro modulo de angular
     //Conectemos a Firebase
     var rootRef = firebase.database().ref('chats');

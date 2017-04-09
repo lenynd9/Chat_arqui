@@ -1,6 +1,6 @@
 app.controller('loginController', ['$scope', '$firebaseAuth', '$location','FBURL', function($scope, $firebaseAuth, $location, FBURL){
 	
-	var config = {
+	/*var config = {
     apiKey: "AIzaSyCsakwDqTDU4WKSngcAJIGUgu0BKF9JqdM",
     authDomain: "appchat-92897.firebaseapp.com",
     databaseURL: "https://appchat-92897.firebaseio.com",
@@ -8,7 +8,7 @@ app.controller('loginController', ['$scope', '$firebaseAuth', '$location','FBURL
     storageBucket: "appchat-92897.appspot.com",
     messagingSenderId: "835221380500"
   };
-  firebase.initializeApp(config);
+  firebase.initializeApp(config);*/
   	$scope.mensaje = "conectado?";
 	$scope.signIn = function(){
 		var email = $scope.log.email;

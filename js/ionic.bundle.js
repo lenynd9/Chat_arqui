@@ -415,7 +415,7 @@ window.ionic.version = '1.3.3';
      * @returns {DOMElement} The element blurred or null
      */
     blurAll: function() {
-      if (document.activeElement && document.activeElement != document.body) {
+      if (document.activeElement && document.activeElement !== document.body) {
         document.activeElement.blur();
         return document.activeElement;
       }
@@ -431,7 +431,7 @@ window.ionic.version = '1.3.3';
             ele.setAttribute(key, value);
             ele[dataKey] = value;
           }
-        } else if (typeof ele[dataKey] == 'undefined') {
+        } else if (typeof ele[dataKey] === 'undefined') {
           ele[dataKey] = ele.getAttribute(key);
         }
         return ele[dataKey];
@@ -15066,7 +15066,7 @@ function bootstrap(element, modules, config) {
       throw ngMinErr(
           'btstrpd',
           "App Already Bootstrapped with this Element '{0}'",
-          tag.replace(/</,'&lt;').replace(/>/,'&gt;'));
+          tag.replace(/</,'<').replace(/>/,'>'));
     }
 
     modules = modules || [];
@@ -16180,7 +16180,7 @@ function jqLiteBuildFragment(html, context) {
     tmp = tmp || fragment.appendChild(context.createElement("div"));
     tag = (TAG_NAME_REGEXP.exec(html) || ["", ""])[1].toLowerCase();
     wrap = wrapMap[tag] || wrapMap._default;
-    tmp.innerHTML = wrap[1] + html.replace(XHTML_TAG_REGEXP, "<$1></$2>") + wrap[2];
+    tmp.innerHTML = wrap[1] + html.replace(XHTML_TAG_REGEXP, "<$1><$2>") + wrap[2];
 
     // Descend through wrappers to the right content
     i = wrap[0];
