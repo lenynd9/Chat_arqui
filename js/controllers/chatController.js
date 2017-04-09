@@ -45,7 +45,7 @@ app.controller('chatController', ['$scope', '$firebaseArray', '$location','FBURL
         return $scope.chats= snapshot.val();
       }); 
 	
-	
+	/*
 	const messaging = firebase.messaging();
 	messaging.requestPermission()
 	.then(function(){
@@ -57,9 +57,9 @@ app.controller('chatController', ['$scope', '$firebaseArray', '$location','FBURL
 	})
 		.catch(function(err){
 		console.log("error connect");
-	})
+	});
 	
-	
+	*/
 	
 	setInterval(function(){
       $scope.$digest();

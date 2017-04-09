@@ -9,7 +9,7 @@ app.controller('loginController', ['$scope', '$firebaseAuth', '$location','FBURL
     messagingSenderId: "835221380500"
   };
   firebase.initializeApp(config);*/
-  	$scope.mensaje = "conectado?";
+
 	$scope.signIn = function(){
 		var email = $scope.log.email;
 		var password = $scope.log.password;
@@ -18,10 +18,9 @@ app.controller('loginController', ['$scope', '$firebaseAuth', '$location','FBURL
 			
 			firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
 				$location.path('/chat');
-				$scope.mensaje="conecto";
 			}).catch(function(error){
-				var errorCode = error.code;
-  				var errorMessage = error.message;
+				console.log(error.code);
+				console.log(error.message);
 			});
 		}
 	};

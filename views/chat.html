@@ -1,10 +1,26 @@
- 
+ <style type="text/css">
+#global {
+	height: 300px;
+	width: 200px;
+	border: 1px solid #ddd;
+	background: #f1f1f1;
+	overflow-y: scroll;
+}
+#mensajes {
+	height: auto;
+}
+.texto {
+	padding:4px;
+	background:#fff;
+}
+</style>
 <ion-view title="Sign In">
     <ion-content>
  <!-- Caja para contener tu 'nickname' para el chat -->
+   <center>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <label for="nickname">Introduce tu Nickname</label>
+        <label for="nickname">Indique un UserName</label>
         <input type="text" ng-model="nickname" id="nickname" placeholder="Anonimo" />
       </div>
     </div>
@@ -12,12 +28,19 @@
     <!-- Contenedor de los chats -->
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
+       <div id="global">
+  			<div id="mensajes">
+       
         <div id="chats-box" disabled="" ng-model="chats">
+         
           <div ng-repeat="chat in chats" id="chat">
             <h3>{{chat.sender}} <small>escribio {{getTiempo(chat.time)}}:</small></h3>
             <div>{{chat.text}}</div>
           </div>
+          
         </div>
+         </div>
+			</div>
       </div>
     </div>
     
@@ -34,6 +57,6 @@
         </div>
       </div>
     </div>
-
+</center>
     </ion-content>
 </ion-view>
