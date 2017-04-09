@@ -1,5 +1,5 @@
 app.controller('regController', ['$scope', '$firebaseAuth', '$location','FBURL', function($scope, $firebaseAuth, $location, FBURL){
-	
+/*	
 	var config = {
     apiKey: "AIzaSyCsakwDqTDU4WKSngcAJIGUgu0BKF9JqdM",
     authDomain: "appchat-92897.firebaseapp.com",
@@ -9,7 +9,7 @@ app.controller('regController', ['$scope', '$firebaseAuth', '$location','FBURL',
     messagingSenderId: "835221380500"
   };
   firebase.initializeApp(config);
-
+*/
 	$scope.signUp = function(){
 		var email = $scope.reg.email;
 		var password = $scope.reg.password;
