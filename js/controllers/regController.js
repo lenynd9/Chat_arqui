@@ -17,7 +17,7 @@ app.controller('regController', ['$scope', '$firebaseAuth', '$location','FBURL',
 		if(email && password){
 			
 			firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-				$location.path('/');
+				$location.path('/chat');
 			}).catch(function(error){
 				var errorCode = error.code;
   				var errorMessage = error.message;
